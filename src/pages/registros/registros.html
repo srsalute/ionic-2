@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Registros</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let registro of registros" (click)="registroTapped($event, registro)">
+      <ion-icon [name]="registro.icon" item-left></ion-icon>
+      {{registro.title}}
+      <div class="item-note" item-right>
+        {{registro.note}}
+      </div>
+    </button>
+  </ion-list>
+  <div *ngIf="selectedRegistro" padding>
+    You navigated here from <b>{{selectedRegistro.title}}</b>
+  </div>
+</ion-content>
