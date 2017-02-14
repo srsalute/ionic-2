@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Registros</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+ 
+  <ion-list no-lines>
+ 
+    <form [formGroup]="myRegistro">
+      <div class="row responsive-sm">
+        <!--<ion-div>-->
+        
+          <ion-item>
+            <ion-label floating>Nome do registro</ion-label>
+            <ion-input formControlName="nome" type="text"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label floating>Data do registro</ion-label>
+            <ion-datetime formControlName="data" displayFormat="DD-MM-YYYY HH:mm"></ion-datetime>
+          </ion-item>
+  
+        <!--</ion-div>-->
+        
+        <!--<ion-item>
+            <ion-label floating>Last Name</ion-label>
+            <ion-input formControlName="lastName" type="text"></ion-input>
+        </ion-item>
+ 
+        <ion-item>
+            <ion-label floating>Age</ion-label>
+            <ion-input formControlName="age" type="number"></ion-input>
+        </ion-item>-->
+      </div>
+    </form>
+ 
+  </ion-list>
+</ion-content>
